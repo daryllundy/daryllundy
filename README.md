@@ -1,4 +1,4 @@
-![Terminal Header](./img/header.svg?v=6)
+![Terminal Header](./img/header.svg?v=7)
 
 <!--
 -->
