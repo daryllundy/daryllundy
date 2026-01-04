@@ -3,15 +3,16 @@
         <div xmlns="http://www.w3.org/1999/xhtml">
             <style>
                 :root {
-                    /* Nord Color Tokens - Warmer Variant */
+                    /* Nord Color Tokens - Frost (Cold) Variant */
                     --color-bg: #2e3440;
                     --color-surface: #3b4252;
-                    --color-accent: #8fbcbb;
-                    --color-warning: #d08770;
-                    --color-on-surface: #d8dee9;
-                    --color-danger: #bf616a;
-                    --color-success: #a3be8c;
-                    --nord-yellow: #ebcb8b;
+                    --color-surface-alt: #434c5e;
+                    --color-accent: #88c0d0;
+                    --color-accent-alt: #81a1c1;
+                    --color-frost-teal: #8fbcbb;
+                    --color-frost-blue: #5e81ac;
+                    --color-on-surface: #eceff4;
+                    --color-muted: #d8dee9;
 
                     /* Typography */
                     --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Monaco, monospace;
@@ -36,9 +37,9 @@
                     margin: 0;
                     width: 100%;
                     height: 240px;
-                    background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-surface) 100%);
+                    background: linear-gradient(135deg, #2e3440 0%, #3b4252 50%, #434c5e 100%);
                     border-radius: var(--radius-lg);
-                    color: var(--color-warning);
+                    color: var(--color-accent);
                     font-family: var(--font-mono);
                     padding: var(--space-5) var(--space-6);
                     box-sizing: border-box;
@@ -49,7 +50,8 @@
                     justify-content: flex-start;
                     padding: var(--space-2);
                     width: 100%;
-                    background-color: rgba(46, 52, 64, 0.5);
+                    background-color: rgba(46, 52, 64, 0.6);
+                    border: 1px solid rgba(136, 192, 208, 0.2);
                     border-radius: var(--radius-md);
                     margin-bottom: var(--space-5);
                 }
@@ -59,9 +61,9 @@
                     border-radius: 50%;
                     margin-right: var(--space-2);
                 }
-                .terminal-circle-red { background-color: var(--color-danger); }
-                .terminal-circle-yellow { background-color: var(--nord-yellow); }
-                .terminal-circle-green { background-color: var(--color-success); }
+                .terminal-circle-red { background-color: var(--color-frost-blue); }
+                .terminal-circle-yellow { background-color: var(--color-accent); }
+                .terminal-circle-green { background-color: var(--color-frost-teal); }
                 .terminal_command_wrap {
                     display: flex;
                     align-items: center;
@@ -69,23 +71,23 @@
                     margin-bottom: var(--space-4);
                 }
                 .terminal_command_arrow {
-                    color: var(--color-warning);
+                    color: var(--color-accent-alt);
                     font-size: 20px;
                     font-weight: bold;
                 }
                 .spinner {
-                    color: var(--color-warning);
+                    color: var(--color-accent);
                     font-size: 18px;
                 }
                 .terminal_command_text {
-                    color: var(--color-accent);
+                    color: var(--color-frost-teal);
                     font-size: 20px;
                 }
                 .cursor {
                     display: inline-block;
                     width: 8px;
                     height: 20px;
-                    background-color: var(--color-accent);
+                    background-color: var(--color-frost-teal);
                     margin-left: 2px;
                     animation: blink 1s step-end infinite;
                 }
@@ -104,7 +106,7 @@
                     gap: var(--space-3);
                 }
                 .bullet {
-                    color: var(--color-warning);
+                    color: var(--color-accent);
                     font-size: 16px;
                     flex-shrink: 0;
                 }
@@ -114,7 +116,7 @@
                     line-height: 1.6;
                 }
                 .highlight {
-                    color: var(--color-accent);
+                    color: var(--color-frost-teal);
                     font-weight: 500;
                 }
                 .link {
@@ -122,6 +124,7 @@
                     text-decoration: none;
                 }
                 .link:hover {
+                    color: var(--color-frost-teal);
                     text-decoration: underline;
                 }
             </style>
@@ -222,6 +225,7 @@
                                                     setTimeout(function() {
                                                         clearInterval(spinnerInterval);
                                                         spinner.textContent = '✓';
+                                                        spinner.style.color = '#8fbcbb';
                                                     }, 400);
                                                 }, 300);
                                             }
